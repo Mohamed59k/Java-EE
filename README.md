@@ -4,7 +4,7 @@ Megdoud Mohamed - Xu Xiaofan
 
 Lancer le projet puis aller à : http://localhost:8080/
 
-Fonctionnalité faite :
+Fonctionnalitées développées :
 
 - Création/Manipulation du profil utilisateur(email/id facebook/photo...)
 - Micro-Blogging : Post de messages
