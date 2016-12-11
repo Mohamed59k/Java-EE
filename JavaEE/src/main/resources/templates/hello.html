@@ -1,0 +1,17 @@
+<html>
+    <head>
+        <title>Hello Facebook</title>
+    </head>
+    <body>
+        <h3>Hello, <span>{{facebookProfile.name}}</span>!</h3>
+        
+        <h4>Here is your feed:</h4>
+        
+        <div {{#post.feed}}>
+            <b>{{post.from.name}}</b> wrote:
+            <p>{{post.message}}</p>
+            <img th:if="${post.picture}" th:src="${post.picture}"/>
+            <hr/>
+        </div>
+    </body>
+</html>

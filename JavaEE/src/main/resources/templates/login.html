@@ -1,0 +1,76 @@
+<html lang="en">
+    <head>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <meta name="description" content="A layout example that shows off a blog page with a list of posts."/>
+        
+        <title>Social Network - Mini Blog</title>
+        
+        <link rel="stylesheet" href="css/bootstrap.min.css"/>
+        <link rel="stylesheet" href="css/bootstrap-social.css"/>
+        
+        <link rel="stylesheet" href="css/font-awesome.min.css"/>
+        
+        <link rel="stylesheet" href="css/pure-min.css"/>
+        <link rel="stylesheet" href="css/grids-responsive-min.css"/>
+        
+        <link rel="stylesheet" href="css/blog.css"/>
+        
+    </head>
+    
+    <body>
+        
+        
+        <div id="layout" class="pure-g">
+            <div class="sidebar pure-u-1 pure-u-md-1-4">
+                <div class="header">
+                    <h1 class="brand-title"><a href="index.html">Mini Blog</a></h1>
+                    <h2 class="brand-tagline">Just chat !</h2>
+                    
+                    <nav class="nav">
+                        <ul class="nav-list">
+                            <li class="nav-item">
+                                <a class="pure-button" href="login.html">Login</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+            
+            <div class="content pure-u-1 pure-u-md-3-4">
+                <div>
+                    
+                    <h1>Login</h1>
+                    
+                    <form class="pure-form pure-form-aligned" method="post">
+                        <fieldset>
+                            <div class="pure-control-group">
+                                <label for="name">Username</label>
+                                <input id="name" type="text" placeholder="Username" name="name">
+                                    </div>
+                            
+                            <div class="pure-control-group">
+                                <label for="password">Password</label>
+                                <input id="password" type="password" placeholder="Password" name="password">
+                                    </div>
+                            
+                            <div class="pure-controls">
+                                <button type="submit" class="pure-button pure-button-primary" name="action" value="login">Login</button>
+                            </div>
+                            
+                            <div class="pure-controls">
+                                <button type="submit" class="pure-button pure-button-primary" name="action" value="signIn">Sign in</button>
+                            </div>
+                            
+                        </fieldset>
+                    </form>
+                    
+                </div>
+            </div>
+        </div>
+        
+        <script src="js/jquery.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        
+    </body>
+</html>
+

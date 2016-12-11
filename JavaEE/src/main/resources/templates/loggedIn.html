@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="description" content="A layout example that shows off a blog page with a list of posts."/>
+
+    <title>Social Network - Mini Blog</title>
+
+    <link rel="stylesheet" href="css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="css/bootstrap-social.css"/>
+
+    <link rel="stylesheet" href="css/font-awesome.min.css"/>
+
+    <link rel="stylesheet" href="css/pure-min.css"/>
+    <link rel="stylesheet" href="css/grids-responsive-min.css"/>
+
+    <link rel="stylesheet" href="css/blog.css"/>
+
+</head>
+
+<body>
+
+
+<div id="layout" class="pure-g">
+    <div class="sidebar pure-u-1 pure-u-md-1-4">
+        <div class="header">
+			<h1 class="brand-title"><a href="index.html">Mini Blog</a></h1>
+            <h2 class="brand-tagline">Just chat !</h2>
+                    
+            <nav class="nav">
+                <ul class="nav-list">
+                    <li class="nav-item">
+                    	<form id="editProfile" action="/edit_profile" method="post" style="margin: 0; padding: 0;">
+                        	<input type="hidden" name="username" value="{{username}}" style="display: inline;"/>
+                        </form>
+                        <a class="pure-button" href='#' onclick='document.getElementById("editProfile").submit()'>Edit my profile</a>
+                    </li> 
+                    <li class="nav-item">
+                        <a class="pure-button" href="login.html">Logout</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+    <div class="content pure-u-1 pure-u-md-3-4">
+        <div>
+
+            <h1>Welcome {{username}} !</h1>
+
+            <p>Say someting about you : </p>
+
+            <form class="pure-form pure-form-stacked" action="/postMessage?userName={{username}}" method="post">
+                <textarea class="form-control" rows="3" name="message"></textarea>
+                <button type="submit" class="pure-button pure-button-primary">Say it!</button>
+            </form>
+
+        </div>
+    </div>
+
+    <div class="content pure-u-1 pure-u-md-3-4">
+        <div>
+
+            <div class="posts">
+                <h1 class="content-subhead">Last Messages</h1>
+                <div>
+                    {{#messages}}
+                    <section class="post">
+                    	<img class="post-avatar" alt="Yoda&#x27;s avatar" height="48" width="48" src="images/person-man.png"/>
+                        
+                        {{#toUsers}}
+                        <form id="{{.}}" action="/profile" method="post" style="margin: 0; padding: 0;">
+                        <input type="hidden" name="username" value="{{.}}" style="display: inline;"/>
+                        </form>
+                        {{/toUsers}}
+                        
+                        {{#hashTags}}
+                        <form id="{{.}}" action="/hashTag" method="post" style="margin: 0; padding: 0;">
+                        <input type="hidden" name="hashTag" value="{{.}}" style="display: inline;"/>
+                        </form>
+                        {{/hashTags}}
+                        
+                        <form id="{{fromUser}}" action="/profile" method="post" style="margin: 0; padding: 0;">
+                        <input type="hidden" name="username" value="{{fromUser}}" style="display: inline;"/>
+                        </form>
+                        	        
+                        <div class="post-description">
+                        	<p>
+                        	{{#toUsers}}
+							<a class="post-author" href='#' onclick='document.getElementById("{{.}}").submit()'>{{.}}</a>          	
+                        	{{/toUsers}} {{message}}
+                        	</p>
+                        	
+                        </div>
+                        
+                                
+                        <p class="post-meta">
+                        {{date}} -
+                        By 
+							<a class="post-author" href='#' onclick='document.getElementById("{{fromUser}}").submit()'>{{fromUser}}</a>
+                        under
+                        
+                        {{#hashTags}}
+						<a class="post-category post-category-js" href='#' onclick='document.getElementById("{{.}}").submit()'>{{.}}</a>          	
+                        {{/hashTags}}
+                        	
+                        </p>
+                        
+                        
+                     </section>
+                     {{/messages}}
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+
+</body>
+</html>
