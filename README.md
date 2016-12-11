@@ -16,8 +16,8 @@ exemple de commande :
 
 deux profils dejà crées :
 
-1) name = "Jean" password = "1"
-2) name = "Bob" password = "2"
+- name = "Jean" password = "1"
+- name = "Bob" password = "2"
 
 GET :
 
